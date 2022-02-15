@@ -4,6 +4,7 @@ import com.atguigu.springcloud.entity.Payment;
 import com.atguigu.springcloud.service.IPaymentService;
 import com.atguigu.springcloud.util.CommonResult;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import sun.util.resources.cldr.rwk.CalendarData_rwk_TZ;
 
@@ -17,7 +18,7 @@ import java.awt.geom.RectangularShape;
 @Slf4j
 public class PaymentController {
 
-	@Resource
+	@Autowired
 	private IPaymentService paymentService;
 
 	@PostMapping(value = "/payment/create")

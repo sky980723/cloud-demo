@@ -2,3 +2,5 @@
 *.iml
 cloud-provider-payment8001/src/main/resources/rebel.xml
 cloud-provider-payment8001/target/classes/rebel.xml
+cloud-consumer-order80/target/
+cloud-consumer-order80/src/main/resources/rebel.xml
