@@ -20,12 +20,12 @@
         </dependency>
 
         <!-- 引入自己定义的api通用包 -->
-        <!--<dependency>
-            <groupId>com.atguigu.springcloud</groupId>
+        <dependency>
+            <groupId>org.demo.springcloud</groupId>
             <artifactId>cloud-api-commons</artifactId>
             <version>${project.version}</version>
             <scope>compile</scope>
-        </dependency>-->
+        </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
         <dependency>
