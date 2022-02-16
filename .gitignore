@@ -5,3 +5,5 @@ cloud-provider-payment8001/target/classes/rebel.xml
 cloud-consumer-order80/target/
 cloud-consumer-order80/src/main/resources/rebel.xml
 */target/
+cloud-eureka-server7001/src/main/resources/rebel.xml
+cloud-api-commons/src/main/resources/rebel.xml
