@@ -18,6 +18,11 @@
     </properties>
 
     <dependencies>
+        <!-- 服务注册中心的客户端端 eureka-client -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
         <!-- 引入自己定义的api通用包 -->
         <dependency>
             <groupId>org.demo.springcloud</groupId>
