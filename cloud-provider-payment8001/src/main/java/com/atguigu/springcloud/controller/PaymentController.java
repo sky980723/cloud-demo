@@ -3,14 +3,14 @@ package com.atguigu.springcloud.controller;
 import com.atguigu.springcloud.entity.Payment;
 import com.atguigu.springcloud.service.IPaymentService;
 import com.atguigu.springcloud.util.CommonResult;
+import com.netflix.appinfo.InstanceInfo;
+import com.netflix.discovery.DiscoveryClient;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
-import sun.util.resources.cldr.rwk.CalendarData_rwk_TZ;
 
 import javax.annotation.Resource;
-import java.awt.geom.RectangularShape;
 
 /**
  * @author Sky
@@ -25,6 +25,9 @@ public class PaymentController {
 
 	@Value("${server.port}")
 	private String serverPort;
+
+	@Resource
+	private DiscoveryClient discoveryClient;
 
 	@PostMapping(value = "/payment/create")
 	public CommonResult create(@RequestBody Payment payment) {
