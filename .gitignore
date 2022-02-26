@@ -9,3 +9,4 @@ cloud-eureka-server7001/src/main/resources/rebel.xml
 cloud-api-commons/src/main/resources/rebel.xml
 cloud-provider-payment8002/src/main/resources/rebel.xml
 cloud-eureka-server7002/src/main/resources/rebel.xml
+cloud-provider-payment8004/src/main/resources/rebel.xml
