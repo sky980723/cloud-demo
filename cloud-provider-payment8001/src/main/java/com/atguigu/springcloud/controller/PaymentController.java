@@ -22,12 +22,8 @@ public class PaymentController {
 	@Autowired
 	private IPaymentService paymentService;
 
-
 	@Value("${server.port}")
 	private String serverPort;
-
-	@Resource
-	private DiscoveryClient discoveryClient;
 
 	@PostMapping(value = "/payment/create")
 	public CommonResult create(@RequestBody Payment payment) {
