@@ -1,13 +1,20 @@
 package com.atguigu.springcloud.controller;
 
 import com.atguigu.springcloud.entity.Payment;
+import com.atguigu.springcloud.lb.LoadBalancer;
 import com.atguigu.springcloud.util.CommonResult;
+import com.netflix.discovery.DiscoveryClient;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
+
+import javax.annotation.Resource;
+import java.net.URI;
+import java.util.List;
 
 /**
  * @author Sky
@@ -22,6 +29,12 @@ public class OrderController {
 	@Autowired
 	private RestTemplate restTemplate;
 
+	@Autowired
+	private LoadBalancer loadBalancer;
+
+	@Resource
+	private DiscoveryClient discoveryClient;
+
 	@GetMapping("/consumer/payment/create")
 	public CommonResult<Payment> create(Payment payment) {
 
@@ -33,5 +46,18 @@ public class OrderController {
 
 		return restTemplate.getForObject(url + "/payment/get/" + id, CommonResult.class);
 	}
+
+	/*@GetMapping(value = "consumer/payment/lb")
+	public String getPaymentLB() {
+		List<ServiceInstance> instances = discoveryClient.getInstancesById("cloud-payment-service");
+		if (instances == null || instances.size() <= 0) {
+			return null;
+		}
+		ServiceInstance serviceInstance = loadBalancer.INSTANCE(instances);
+
+		URI uri = serviceInstance.getUri();
+
+		return restTemplate.getForObject(url + "payment/lb",null,CommonResult.class);
+	}*/
 
 }
