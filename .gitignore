@@ -13,3 +13,4 @@ cloud-provider-payment8004/src/main/resources/rebel.xml
 cloud-providerconsul-payment8006/src/main/resources/rebel.xml
 cloud-consumerzk-order80/src/main/resources/rebel.xml
 cloud-consumerconsul-order80/src/main/resources/rebel.xml
+cloud-consumer-feign-order80/src/main/resources/rebel.xml
