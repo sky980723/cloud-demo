@@ -6,3 +6,15 @@ eureka:
     register-with-eureka: false
     service-url:
       defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/
+
+#设置feign客户端超时时间(OpenFeign默认支持ribbon)
+ribbon:
+  #指 建立连接需要的时间 适用于网络正常的情况 两端连接所用的时间 单位 毫秒
+  ReadTimeout: 5000
+  #指 建立连接之后 从服务器读取到可用资源所用的时间 单位 毫秒
+  ConnectTimeout: 5000
+
+logging:
+  level:
+    #fegin日志 以什么级别 监控 哪些接口
+    com.atguigu.springcloud.service.PaymentFeignService: debug

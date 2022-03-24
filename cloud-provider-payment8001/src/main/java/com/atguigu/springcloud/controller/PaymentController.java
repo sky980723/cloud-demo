@@ -1,5 +1,6 @@
 package com.atguigu.springcloud.controller;
 
+import ch.qos.logback.core.util.TimeUtil;
 import com.atguigu.springcloud.entity.Payment;
 import com.atguigu.springcloud.service.IPaymentService;
 import com.atguigu.springcloud.util.CommonResult;
@@ -8,6 +9,7 @@ import com.netflix.discovery.DiscoveryClient;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.EnableLoadTimeWeaving;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -50,6 +52,17 @@ public class PaymentController {
 
 	@GetMapping(value = "/payment/lb")
 	public String getPaymenLB() {
+
+		return serverPort;
+	}
+
+	@GetMapping(value = "/payment/feign/timeout")
+	public String paymentFeignTimeout() {
+		try {
+			Thread.sleep(3000);
+		} catch (Exception e) {
+
+		}
 
 		return serverPort;
 	}
