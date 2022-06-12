@@ -2,6 +2,7 @@ package com.atguigu.springcloud.controller;
 
 import com.atguigu.springcloud.service.PaymentHystrixService;
 import com.netflix.discovery.converters.Auto;
+import com.netflix.hystrix.contrib.javanica.annotation.DefaultProperties;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import lombok.extern.slf4j.Slf4j;
@@ -19,6 +20,7 @@ import javax.annotation.Resources;
  */
 @RestController
 @Slf4j
+
 public class OrderHystrixController {
 
 	@Resource
@@ -26,8 +28,7 @@ public class OrderHystrixController {
 
 	@GetMapping("/consumer/payment/hystrix/timeout/{id}")
 	@HystrixCommand(fallbackMethod = "paymentTimeOutFallbackMethod", commandProperties = {
-			@HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "6000")
-	})
+			@HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "6000")})
 	public String paymentInfo_TimeOut(@PathVariable("id") Integer id) {
 		//int age = 10/0;
 		String result = paymentHystrixService.PaymentInfo_timeout(id);
