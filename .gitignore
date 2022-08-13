@@ -16,3 +16,5 @@ cloud-consumerconsul-order80/src/main/resources/rebel.xml
 cloud-consumer-feign-order80/src/main/resources/rebel.xml
 cloud-provider-hystrix-payment8001/src/main/resources/rebel.xml
 cloud-consumer-fegin-hystrix-order80/src/main/resources/rebel.xml
+cloud-consumer-hystrix-dashboar9001/src/main/resources/rebel.xml
+cloud-geteway-geteway9527/src/main/resources/rebel.xml
