@@ -18,6 +18,7 @@ public class GeteWayConfig {
 	public RouteLocator customerRouteLocator(RouteLocatorBuilder routeLocatorBuilder) {
 		RouteLocatorBuilder.Builder routers = routeLocatorBuilder.routes();
 
+		//代码方式实现网关路由
 		routers.route("path_route_atguigu", r -> r.path("/guonei").uri("http://news.baidu.com/")).build();
 
 		return routers.build();
