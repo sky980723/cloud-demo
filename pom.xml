@@ -23,6 +23,7 @@
         <module>cloud-consumer-fegin-hystrix-order80</module>
         <module>cloud-consumer-hystrix-dashboar9001</module>
         <module>cloud-geteway-geteway9527</module>
+        <module>cloud-config-center-3344</module>
     </modules>
     <packaging>pom</packaging>
 
